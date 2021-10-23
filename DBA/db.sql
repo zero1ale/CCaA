@@ -33,14 +33,22 @@ CREATE TABLE colonia (
   foreign key (id_municipio) references municipio(id_municipio)
 );
 
+CREATE TABLE tipo_usuario(
+  id_tipo_usuario INT  AUTO_INCREMENT PRIMARY KEY,
+  descripcion text
+);
+
 CREATE TABLE usuario(
     id_usuario INT  AUTO_INCREMENT PRIMARY KEY,
     nombre varchar(100),
     ape1 varchar(100),
     ape2 varchar(100),
     email varchar(100),
-    rfc varchar(13)
+    rfc varchar(13),
+    id_tipo_usuario int
 );
+alter table usuario add foreign key (id_tipo_usuario)
+references tipo_usuario(id_tipo_usuario);
 
 CREATE TABLE comprador(
     id_comprador INT  AUTO_INCREMENT PRIMARY KEY,
