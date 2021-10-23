@@ -110,6 +110,6 @@ CREATE TABLE contracargo(
 CREATE TABLE logi(
   rfc varchar(64),
   email varchar(64),
-  key varchar(64),
+  clave varchar(64),
   ver boolean
 );
