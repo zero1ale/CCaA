@@ -34,7 +34,7 @@ CREATE TABLE colonia (
 );
 
 CREATE TABLE usuario(
-    id_usuario BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT  AUTO_INCREMENT PRIMARY KEY,
     nombre varchar(100),
     ape1 varchar(100),
     ape2 varchar(100),
@@ -43,24 +43,24 @@ CREATE TABLE usuario(
 );
 
 CREATE TABLE comprador(
-    id_comprador BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id_comprador INT  AUTO_INCREMENT PRIMARY KEY,
     id_usuario int,
     telefono varchar(10),
     email_compra varchar(100),
     ip varchar(15),
-    id_colonia int,
-    foreign key (id_usuario) references usuario(id_usuario)
+    id_colonia int
 );
 alter table comprador add foreign key (id_colonia) references colonia(id_colonia);
+alter table comprador add foreign key (id_usuario) references usuario(id_usuario);
 
 CREATE TABLE tipo_tarjeta(
-    id_tipo_tarjeta BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id_tipo_tarjeta INT  AUTO_INCREMENT PRIMARY KEY,
     tipo_tarjeta varchar(100),
     nacional boolean
 );
 
 CREATE TABLE tarjetahabiente(
-    id_tarjetahabiente BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id_tarjetahabiente INT  AUTO_INCREMENT PRIMARY KEY,
     id_usuario int,
     cuenta varchar(16),
     id_tipo_tarjeta int,
@@ -69,12 +69,12 @@ CREATE TABLE tarjetahabiente(
 );
 
 CREATE TABLE tipo_operativa(
-    id_tipo_operativa BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id_tipo_operativa INT  AUTO_INCREMENT PRIMARY KEY,
     descripcion text
 );
 
 CREATE TABLE transaccion(
-    id_transaccion BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id_transaccion INT  AUTO_INCREMENT PRIMARY KEY,
     id_comprador int,
     comercio text,
     id_tipo_operativa int,
@@ -87,12 +87,12 @@ CREATE TABLE transaccion(
 );
 
 CREATE TABLE tipo_contracargo(
-    id_tipo_contracargo BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id_tipo_contracargo INT  AUTO_INCREMENT PRIMARY KEY,
     descripcion text
 );
 
 CREATE TABLE contracargo(
-    id_contracargo BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id_contracargo INT  AUTO_INCREMENT PRIMARY KEY,
     id_transaccion int,
     id_tipo_contracargo int,
     foreign key (id_transaccion) references transaccion(id_transaccion),
