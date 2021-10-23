@@ -1,3 +1,9 @@
+insert into tipo_usuario(descripcion)
+values ('persona');
+insert into tipo_usuario(descripcion)
+values ('banco');
+insert into tipo_usuario(descripcion)
+values ('procesador de pago');
 ------------------------------------------------------
 -------insert usuarios--------------------------------
 ------------------------------------------------------
@@ -81,4 +87,30 @@ values ('Venta por internet');
 insert into tipo_operativa(descripcion)
 values ('Telefonica');
 insert into tipo_operativa(descripcion)
-values ('Telefonica');
+values ('Cargo recurrente');
+insert into tipo_operativa(descripcion)
+values ('Contactless');
+insert into tipo_operativa(descripcion)
+values ('Chip');
+
+------------------------------------------------------
+------------tipo_contracargo----------------------------
+------------------------------------------------------
+insert into tipo_contracargo(descripcion)
+values ('fraude internacional');
+insert into tipo_contracargo(descripcion)
+values ('fraude nacional');
+insert into tipo_contracargo(descripcion)
+values ('fraude visa');
+
+------------------------------------------------------
+------------tipo_operativa----------------------------
+------------------------------------------------------
+insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
+values ();
+
+------------------------------------------------------
+------------contracargo----------------------------
+------------------------------------------------------
+insert into contracargo(id_transaccion,id_tipo_contracargo)
+values ();
