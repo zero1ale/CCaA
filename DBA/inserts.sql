@@ -7,26 +7,26 @@ values ('procesador de pago');
 ------------------------------------------------------
 -------insert usuarios--------------------------------
 ------------------------------------------------------
-insert into usuario(nombre,ape1,ape2)
-values ('Juan','Sanchez','Díaz');
-insert into usuario(nombre,ape1,ape2)
-values ('Ruben','Gonzales','Soto');
-insert into usuario(nombre,ape1,ape2)
-values ('Jose','Perez','Santos');
-insert into usuario(nombre,ape1,ape2)
-values ('Manuel','Avila','Ruiz');
-insert into usuario(nombre,ape1,ape2)
-values ('Pedro','Gonzales','Quiroz');
-insert into usuario(nombre,ape1,ape2)
-values ('Juan','Perez','Díaz');
-insert into usuario(nombre,ape1,ape2)
-values ('Alma','Medina','Suarez');
-insert into usuario(nombre,ape1,ape2)
-values ('Raul','Sanchez','Vidal');
-insert into usuario(nombre,ape1,ape2)
-values ('Hector','Montaño','Osnaya');
-insert into usuario(nombre,ape1,ape2)
-values ('David','Ramos','Fuentes');
+insert into usuario(nombre,ape1,ape2,id_tipo_usuario,id_tipo_usuario)
+values ('Juan','Sanchez','Díaz',1);
+insert into usuario(nombre,ape1,ape2,id_tipo_usuario,id_tipo_usuario)
+values ('Ruben','Gonzales','Soto',1);
+insert into usuario(nombre,ape1,ape2,id_tipo_usuario)
+values ('Jose','Perez','Santos',1);
+insert into usuario(nombre,ape1,ape2,id_tipo_usuario)
+values ('Manuel','Avila','Ruiz',1);
+insert into usuario(nombre,ape1,ape2,id_tipo_usuario)
+values ('Pedro','Gonzales','Quiroz',1);
+insert into usuario(nombre,ape1,ape2,id_tipo_usuario)
+values ('Juan','Perez','Díaz',1);
+insert into usuario(nombre,ape1,ape2,id_tipo_usuario)
+values ('Alma','Medina','Suarez',1);
+insert into usuario(nombre,ape1,ape2,id_tipo_usuario)
+values ('Raul','Sanchez','Vidal',1);
+insert into usuario(nombre,ape1,ape2,id_tipo_usuario)
+values ('Hector','Montaño','Osnaya',1);
+insert into usuario(nombre,ape1,ape2,id_tipo_usuario)
+values ('David','Ramos','Fuentes',1);
 
 ------------------------------------------------------
 --------------------comprador-------------------------
