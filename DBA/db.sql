@@ -34,7 +34,7 @@ CREATE TABLE "tarjetahabiente"(
     "cuenta" varchar(16),
     "id_tipo_tarjeta" int
 );
-alter table id_tarjetahabiente add primary key(id_tarjetahabiente);
+alter table tarjetahabiente add primary key(id_tarjetahabiente);
 alter table tarjetahabiente
 add foreign key (id_tipo_tarjeta)
 references tipo_tarjeta(id_tipo_tarjeta);
@@ -46,7 +46,7 @@ CREATE TABLE "tipo_operativa"(
     "id_tipo_operativa" int,
     "descripcion" text
 );
-alter table tipo_operativa ad primary key(id_tipo_operativa);
+alter table tipo_operativa add primary key(id_tipo_operativa);
 
 CREATE TABLE "transaccion"(
     "id_transaccion" int,
@@ -85,7 +85,7 @@ add foreign key (id_transaccion)
 references transaccion(id_transaccion);
 alter table contracargo
 add foreign key (id_tipo_contracargo)
-references contracargo(id_tipo_contracargo);
+references tipo_contracargo(id_tipo_contracargo);
 
 CREATE TABLE "logi"(
   "rfc" varchar(64),
