@@ -81,6 +81,18 @@ CREATE TABLE tipo_operativa(
     descripcion text
 );
 
+CREATE TABLE tipo_receptor(
+  id_tipo_receptor INT  AUTO_INCREMENT PRIMARY KEY,
+  descripcion text
+);
+
+CREATE TABLE receptor_pago(
+  id_receptor_pago INT  AUTO_INCREMENT PRIMARY KEY,
+  nombre varchar(100),
+  id_tipo_receptor int,
+  foreign key (id_tipo_receptor) references tipo_receptor(id_tipo_receptor)
+);
+
 CREATE TABLE transaccion(
     id_transaccion INT  AUTO_INCREMENT PRIMARY KEY,
     id_comprador int,
@@ -89,9 +101,11 @@ CREATE TABLE transaccion(
     id_tarjetahabiente int,
     monto float,
     fecha date,
+    id_receptor_pago int,
     foreign key (id_comprador) references comprador(id_comprador),
     foreign key (id_tipo_operativa) references tipo_operativa(id_tipo_operativa),
-    foreign key (id_tarjetahabiente) references tarjetahabiente(id_tarjetahabiente)
+    foreign key (id_tarjetahabiente) references tarjetahabiente(id_tarjetahabiente),
+    foreign key (id_receptor_pago) references receptor_pago(id_receptor_pago)
 );
 
 CREATE TABLE tipo_contracargo(

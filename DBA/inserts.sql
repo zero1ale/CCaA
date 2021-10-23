@@ -1,9 +1,8 @@
 insert into tipo_usuario(descripcion)
 values ('persona');
 insert into tipo_usuario(descripcion)
-values ('banco');
-insert into tipo_usuario(descripcion)
-values ('procesador de pago');
+values ('admin');
+
 ------------------------------------------------------
 -------insert usuarios--------------------------------
 ------------------------------------------------------
@@ -36,11 +35,11 @@ values (6,'4426879452','osc87@hotmail.com','192.168.1.28',103730);
 insert into comprador(id_usuario,telefono,email_compra,ip,id_colonia)
 values (7,'5566447788','alma.m@gmail.com','192.154.1.55',62704);
 insert into comprador(id_usuario,telefono,email_compra,ip,id_colonia)
-values (8,'5533447788','raul.s@msn.com','192.250.20.30',28802);
+values (8,'5533447788','raul.s@msn.com','192.250.20.30',111852);
 insert into comprador(id_usuario,telefono,email_compra,ip,id_colonia)
-values (9,'5577446688','hector.montaño@gmail.com','168.120.10.33',28265);
+values (9,'5577446688','hector.montaño@gmail.com','168.120.10.33',11052);
 insert into comprador(id_usuario,telefono,email_compra,ip,id_colonia)
-values (10,'6564360455','nada.abc@gmail.com','192.168.1.254',21036);
+values (10,'6564360455','nada.abc@gmail.com','192.168.1.254',10250);
 
 ------------------------------------------------------
 --------------------tipo de tarjeta-------------------
@@ -104,118 +103,136 @@ insert into tipo_contracargo(descripcion)
 values ('fraude visa');
 
 ------------------------------------------------------
-------------tipo_operativa----------------------------
+------------receptor de pago--------------------------
+------------------------------------------------------
+insert into tipo_receptor(descripcion)
+values ('banco');
+insert into tipo_receptor(descripcion)
+values ('procesador de pago');
+
+insert into receptor_pago(nombre,id_tipo_receptor)
+values('BANAMEX',1);
+insert into receptor_pago(nombre,id_tipo_receptor)
+values('SANTANDER',1);
+insert into receptor_pago(nombre,id_tipo_receptor)
+values('BBVA',1);
+insert into receptor_pago(nombre,id_tipo_receptor)
+values('OPENPAY',2);
+insert into receptor_pago(nombre,id_tipo_receptor)
+values('MERCADO PAGO',2);
+------------------------------------------------------
+------------transaccion----------------------------
 ------------------------------------------------------
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (1,'openpay',1,1,355,'2021-9-17');
+values (1,'openpay',1,1,355,'2021-9-17',5);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (2,'openpay',1,2,648.6,'2021-10-1');
+values (2,'openpay',1,2,648.6,'2021-10-1',5);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,3,1722,'2021-10-3');
+values (3,'openpay',1,3,1722,'2021-10-3',5);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (4,'openpay',1,4,487,'2021-9-29');
+values (4,'openpay',1,4,487,'2021-9-29',5);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',2,5,800,'2021-8-26');
+values (5,'openpay',2,5,800,'2021-8-26',5);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',2,6,600,'2021-8-26');
+values (5,'openpay',2,6,600,'2021-8-26',5);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',3,2,250,'2021-7-22');
+values (5,'openpay',3,2,250,'2021-7-22',3);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',1,8,294,'2021-9-20');
+values (5,'openpay',1,8,294,'2021-9-20',1);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',4,9,261.6,'2021-8-11');
+values (5,'openpay',4,9,261.6,'2021-8-11',2);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',5,10,384.44,'2021-9-2');
+values (5,'openpay',5,10,384.44,'2021-9-2',2);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',2,1,576.6,'2021-9-8');
+values (5,'openpay',2,1,576.6,'2021-9-8',1);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',2,2,277.39,'2021-10-1');
+values (5,'openpay',2,2,277.39,'2021-10-1',1);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',2,3,929,'2021-8-19');
+values (5,'openpay',2,3,929,'2021-8-19',3);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',2,4,22223.64,'2021-9-6');
+values (5,'openpay',2,4,22223.64,'2021-9-6',4);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',2,5,539,'2021-8-24');
+values (5,'openpay',2,5,539,'2021-8-24',4);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',1,1,759,'2021-8-24');
+values (5,'openpay',1,1,759,'2021-8-24',4);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',1,2,529,'2021-9-2');
+values (5,'openpay',1,2,529,'2021-9-2',4);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',1,3,1400,'2021-9-7');
+values (5,'openpay',1,3,1400,'2021-9-7',3);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',1,4,1196,'2021-9-19');
+values (5,'openpay',1,4,1196,'2021-9-19',3);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',1,10,256.09,'2021-10-1');
+values (5,'openpay',1,10,256.09,'2021-10-1',2);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',1,6,272.54,'2021-9-30');
+values (5,'openpay',1,6,272.54,'2021-9-30',2);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (5,'openpay',1,7,444.38,'2021-10-3');
+values (5,'openpay',1,7,444.38,'2021-10-3',4);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,8,529,'2021-8-10');
+values (3,'openpay',1,8,529,'2021-8-10',3);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,9,355,'2021-10-5');
+values (3,'openpay',1,9,355,'2021-10-5',5);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,10,537.77,'2021-9-10');
+values (3,'openpay',1,10,537.77,'2021-9-10',4);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,6,471.18,'2021-10-1');
+values (3,'openpay',1,6,471.18,'2021-10-1',3);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,7,674.37,'2021-10-5');
+values (3,'openpay',1,7,674.37,'2021-10-5',3);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,3,263,'2021-9-30');
+values (3,'openpay',1,3,263,'2021-9-30',4);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,4,260,'2021-10-3');
+values (3,'openpay',1,4,260,'2021-10-3',5);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,5,1620,'2021-10-4');
+values (3,'openpay',1,5,1620,'2021-10-4',3);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,6,336.34,'2021-10-5');
+values (3,'openpay',1,6,336.34,'2021-10-5',4);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',5,7,279.35,'2021-10-5');
+values (3,'openpay',5,7,279.35,'2021-10-5',2);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',5,8,428.31,'2021-10-5');
+values (3,'openpay',5,8,428.31,'2021-10-5',2);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',5,9,301.77,'2021-10-5');
+values (3,'openpay',5,9,301.77,'2021-10-5',1);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',5,10,1053.19,'2021-10-5');
+values (3,'openpay',5,10,1053.19,'2021-10-5',3);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',5,6,1199,'2021-10-5');
+values (3,'openpay',5,6,1199,'2021-10-5',1);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',4,2,312.86,'2021-10-5');
+values (3,'openpay',4,2,312.86,'2021-10-5',2);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,3,288,'2021-10-5');
+values (3,'openpay',1,3,288,'2021-10-5',1);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,9,285,'2021-10-5');
+values (3,'openpay',1,9,285,'2021-10-5',1);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,10,1177.96,'2021-10-5');
+values (3,'openpay',1,10,1177.96,'2021-10-5',1);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,6,480.29,'2021-10-5');
+values (3,'openpay',1,6,480.29,'2021-10-5',1);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,2,829,'2021-10-5');
+values (3,'openpay',1,2,829,'2021-10-5',1);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,3,269.02,'2021-10-1');
+values (3,'openpay',1,3,269.02,'2021-10-1',5);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,4,1249,'2021-10-5');
+values (3,'openpay',1,4,1249,'2021-10-5',3);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,5,500,'2021-9-25');
+values (3,'openpay',1,5,500,'2021-9-25',2);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',1,6,521.94,'2021-10-5');
+values (3,'openpay',1,6,521.94,'2021-10-5',3);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (3,'openpay',5,7,787.5,'2021-10-5');
+values (3,'openpay',5,7,787.5,'2021-10-5'4);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (1,'openpay',5,8,632,'2021-10-5');
+values (1,'openpay',5,8,632,'2021-10-5',2);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (1,'openpay',5,9,562,'2021-10-5');
+values (1,'openpay',5,9,562,'2021-10-5',4);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (1,'openpay',5,10,1099,'2021-10-5');
+values (1,'openpay',5,10,1099,'2021-10-5',5);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (1,'openpay',1,6,9482.14,'2021-10-5');
+values (1,'openpay',1,6,9482.14,'2021-10-5',3);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (1,'openpay',1,7,462,'2021-10-5');
+values (1,'openpay',1,7,462,'2021-10-5',2);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (1,'openpay',1,8,512,'2021-10-5');
+values (1,'openpay',1,8,512,'2021-10-5',1);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (1,'openpay',1,9,415.82,'2021-9-29');
+values (1,'openpay',1,9,415.82,'2021-9-29',1);
 insert into transaccion(id_comprador,comercio,id_tipo_operativa,id_tarjetahabiente,monto,fecha)
-values (1,'openpay',1,10,1249,'2021-10-2');
+values (1,'openpay',1,10,1249,'2021-10-2',1);
 ------------------------------------------------------
 ------------contracargo----------------------------
 ------------------------------------------------------
