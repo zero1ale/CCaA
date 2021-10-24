@@ -43,3 +43,18 @@ contracargo as c
 where
 tr.id_transaccion = c.id_transaccion
 group by tr.id_transaccion;
+
+select c.ip
+from comprador as c,transaccion as t
+where c.id_comprador = t.id_comprador
+order by t.fecha desc 
+limit 10;
+
+select es.estado, mu.municipio, col.colonia, col.cp
+from contracargo as c, transaccion as t, comprador as co,
+colonia as col, municipio as mu, estado as es
+where es.id_estado = mu.id_estado and
+mu.id_municipio = col.id_municipio and
+col.id_colonia = co.id_colonia and
+co.id_comprador = t.id_comprador and
+t.id_transaccion = c.id_transaccion;
