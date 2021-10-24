@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(/static/img/transition_background.jpg);
+  background-size: cover;
+  font-family: sans-serif;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right top,
+    #05193799,
+    #004d7a99,
+    #00879399,
+    #00bf7299,
+    #a8eb1299
+  );
+  z-index: -1;
+}
+
+.loader-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+section{
+    margin-top: 100px;
+}
+.left {
+  margin-left: 180px;
+  width: 30%;
+  height: 70%;
+}
+.left h1 {
+  color: seashell;
+  margin-top: 10px;
+  margin-left: 5px;
+  font-size: 120px;
+}
+.left h3 {
+  margin-top: 0;
+  margin-left: 60px;
+  margin-bottom: 80px;
+  font-size: 18px;
+  color: seashell;
+}
+.left p {
+  color: white;
+  font-size:33px;
+  margin-bottom: 55px;
+}
+.right {
+  width: 40%;
+  height: 70%;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+p.text-footer {
+  margin-left: 230px;
+}
