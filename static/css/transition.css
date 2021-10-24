@@ -71,3 +71,13 @@ img {
 p.text-footer {
   margin-left: 230px;
 }
+.loader-wrapper .group .button{
+	border:none;
+	padding:15px 20px;
+	border-radius:35px;
+	background:rgba(240, 63, 9, 0.1);
+	font-size: 30px;
+}
+.loader-wrapper .group .button{
+	background:#103679;
+}

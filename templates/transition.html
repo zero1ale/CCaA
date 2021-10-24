@@ -19,9 +19,23 @@
         </section>
         <section class="right">
             <img src="/static/img/phone.png" alt="">
-            <a href="/templates/user_dash.html">Continuar</a>
+            <div class="group">
+                <input type="submit" class="button" value="Dashboard"  onclick="myFunction1()">
+                <input type="submit" class="button" value="consultas"  onclick="myFunction2()">
+            </div>
+            
         </section>
     </div>
+    <script>
+		function myFunction1() {
+		  location.replace("/user_dash.html")
+		}
+		</script>
+    <script>
+		function myFunction2() {
+		  location.replace("/comsult.html")
+		}
+		</script>
 
 </body>
 
