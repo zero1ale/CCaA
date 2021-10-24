@@ -1,16 +1,12 @@
 
 select cuenta from tarjetahabiente;
 
-select r.nombre , count(r.id_receptor_pago)
-from 
-receptor_pago as r,
-tipo_receptor as rt,
-transaccion as tr, 
-contracargo as c
-where
-t.id_tarjetahabiente = tr.id_tarjetahabiente and
-tr.id_transaccion = c.id_transaccion and 
-group by r.id_receptor_pago;
+select tr.descripcion, rp.nombre, count(t.id_receptor_pago)
+from transaccion as t, contracargo as c, receptor_pago as rp, tipo_receptor as tr
+where tr.id_tipo_receptor = rp.id_tipo_receptor and
+rp.id_receptor_pago = t.id_receptor_pago and
+t.id_transaccion = c.id_transaccion
+group by t.id_receptor_pago;
 
 
 select concat(u.nombre,' ',u.ape1,' ',u.ape2) as persona, count(u.id_usuario)
@@ -40,9 +36,10 @@ t.fecha >= (select DATE_SUB(current_date(), INTERVAL 1 YEAR)) and
 t.id_transaccion = c.id_transaccion;
 
 
-select tr.comercio
+select tr.comercio, count(tr.id_transaccion)
 from 
 transaccion as tr, 
 contracargo as c
 where
-tr.id_transaccion = c.id_transaccion;
+tr.id_transaccion = c.id_transaccion
+group by tr.id_transaccion;
